@@ -67,11 +67,16 @@ public class VideoJuego extends Validar implements Serializable {
 	 */
 	public boolean setFechaLanzamiento(LocalDate fechaLanzamiento) {
 
-		if (Validar.validarFecha(fechaLanzamiento)) {
-			this.fechaLanzamiento = fechaLanzamiento;
-			return true;
-		} else {
-			System.err.println("[ERROR]: La fecha introducida no puede ser posterior a la fecha actual.");
+		try {
+			if (Validar.validarFecha(fechaLanzamiento)) {
+				this.fechaLanzamiento = fechaLanzamiento;
+				return true;
+			} else {
+				System.err.println("[ERROR]: La fecha introducida no puede ser posterior a la fecha actual.");
+				return false;
+			}
+		}catch (Exception e) {
+			System.err.println("La fecha introducida es errónea.");
 			return false;
 		}
 	}

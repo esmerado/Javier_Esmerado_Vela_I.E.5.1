@@ -58,7 +58,6 @@ public class Tienda {
 					
 				} catch (Exception e) {
 					System.err.println("[ERROR]: Ha ocurrido un error al introducir alguno de los datos.");
-					e.printStackTrace();
 				}
 			}else {
 				System.out.println("Lo sentimos no se pueden añadir más de 10 videojuegos.");
@@ -121,7 +120,6 @@ public class Tienda {
 			System.out.println("Información guardada con éxito en el fichero videojuego.dat");
 		} catch (IOException e) {
 			System.err.println("[ERROR]: Ups ha ocurrido un error.");
-			e.printStackTrace();
 		}
 	}
 
